@@ -1,0 +1,34 @@
+﻿@model List<DocenteViewModel>
+
+<table class="table table-hover table-bordered table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Nome</td>
+                <td>@item.Cognome</td>
+                <td>@item.Email</td>
+                <td>@item.Telefono</td>
+               
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Totale</th>
+            <th>@Model.Count</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+</table>

@@ -11,7 +11,12 @@ namespace Week7.Master.RepositoryMock
     public class RepositoryStudentiMock : IRepositoryStudenti
     {
 
-        public static List<Studente> Studenti = new List<Studente>();
+        public static List<Studente> Studenti = new List<Studente>() 
+        { 
+        new Studente{ ID = 1, Nome= "Pippo", Cognome = "Neri", TitoloStudio = "Ingegneria", DataNascita = new DateTime(2000,12,12), Email = "pippo@email.it"},
+        new Studente{ ID = 2, Nome= "Pluto", Cognome = "Verdi", TitoloStudio = "Informatica", DataNascita = new DateTime(1999,10,12), Email = "pluto@email.it"},
+        new Studente{ ID = 3, Nome= "Minnie", Cognome = "Rosa", TitoloStudio = "Letteratura", DataNascita = new DateTime(2003,07,31), Email = "minnie@email.it"}
+        };
 
 
 

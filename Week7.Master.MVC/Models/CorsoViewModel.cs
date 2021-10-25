@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Week7.Master.MVC.Models
 {
-    public class CorsiViewModel : Controller
+    public class CorsoViewModel
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public string CorsoCodice { get; set; }
+        public string Nome { get; set; }
+        public string Descrizione { get; set; }
+
     }
 }

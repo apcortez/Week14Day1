@@ -1,0 +1,31 @@
+﻿@model List<StudenteViewModel>
+
+<table class="table table-hover table-bordered table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Link</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Nome</td>
+            <td>@item.Cognome</td>
+            <td><a asp-controller="Studenti" asp-action="Details" asp-route-id="@item.ID" class="btn btn-success">Ulteriori info</a></td>
+        </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Totale</th>
+            <th>@Model.Count</th>
+            <th></th>
+        </tr>
+    </tfoot>
+
+</table>

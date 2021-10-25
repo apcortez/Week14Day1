@@ -16,5 +16,6 @@ namespace Week7.Master.Core.Entities
         {
             return $"Docente: {ID}\t{Nome}\t{Cognome}\tmail: {Email}\ttel: {Telefono}";
         }
+
     }
 }
