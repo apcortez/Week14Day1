@@ -4,3 +4,14 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Questo è una prova</p>
+@{ var theMonth = DateTime.Now.Month;}
+<p> Valore numerico del mese: @theMonth</p>
+
+@{ 
+    ViewBag.AltraVariabile = "Ciao questa stringa è contenuta in AltraVariabile";
+}
+
+<h3>Dati della ViewBag:</h3>
+<p> @ViewBag.Messaggio</p>
+<p> @ViewBag.Valore</p>
+<p> @ViewBag.AltraVariabile</p>

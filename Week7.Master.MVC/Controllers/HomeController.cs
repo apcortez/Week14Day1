@@ -30,6 +30,8 @@ namespace Week7.Master.MVC.Controllers
 
         public IActionResult Prova()
         {
+            ViewBag.Messaggio = "Benvenuti nella pagina. Questo è il messaggio contenuto nella variabile Messaggio della ViewBag.";
+            ViewBag.Valore = 3214;
             return View();
         }
 
