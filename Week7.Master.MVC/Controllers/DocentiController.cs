@@ -28,5 +28,68 @@ namespace Week7.Master.MVC.Controllers
 
             return View(docentiViewModel);
         }
+
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(DocenteViewModel docenteViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var docente = docenteViewModel.toDocente();
+                BL.InserisciNuovoDocente(docente);
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(docenteViewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var docente = BL.GetAllDocenti().Where(d => d.ID == id).FirstOrDefault();
+            var docenteViewModel = docente.ToDocenteViewModel();
+
+            return View(docenteViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Update(DocenteViewModel docenteViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var docente = docenteViewModel.toDocente();
+                BL.ModificaDocente(docente.ID, docente.Telefono, docente.Email);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(docenteViewModel);
+        }
+
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var docente = BL.GetAllDocenti().Where(d => d.ID == id).FirstOrDefault();
+            var docenteViewModel = docente.ToDocenteViewModel();
+            return View(docenteViewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(DocenteViewModel docenteViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var docente = docenteViewModel.toDocente();
+                BL.EliminaDocente(docente.ID);
+                return RedirectToAction(nameof(Index));
+
+            }
+            return View(docenteViewModel);
+        }
     }
 }

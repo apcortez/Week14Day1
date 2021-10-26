@@ -1,7 +1,7 @@
 ﻿@model List<CorsoViewModel>
 <h1>Index dei Corsi</h1>
 
-
+<a asp-controller="Corsi" asp-action="Create" class="btn btn-primary">Aggiungi Corso</a>
 <table class="table table-hover table-bordered table table-striped">
     <thead>
         <tr>
@@ -14,12 +14,17 @@
     <tbody>
         @foreach(var item in Model)
             {
-                <tr>
-                    <td>@item.CorsoCodice</td>
-                    <td>@item.Nome</td>
-                    @*@<td>@item.Descrizione</td>*@
-                    <td><a asp-controller="Corsi" asp-action="Details" asp-route-id="@item.CorsoCodice" class="btn btn-primary">Visualizza dettagli</a></td>
-                </tr>
+        <tr>
+            <td>@item.CorsoCodice</td>
+            <td>@item.Nome</td>
+            @*@<td>@item.Descrizione</td>*@
+            <td>
+                <a asp-controller="Corsi" asp-action="Details" asp-route-id="@item.CorsoCodice" class="btn btn-primary">Visualizza dettagli</a>
+                <a asp-controller="Corsi" asp-action="Update" asp-route-id="@item.CorsoCodice" class="btn btn-primary">Modifica</a>
+                <a asp-controller="Corsi" asp-action="Delete" asp-route-id="@item.CorsoCodice" class="btn btn-danger">Delete</a>
+            </td>
+
+        </tr>
             }
     </tbody>
     <tfoot>

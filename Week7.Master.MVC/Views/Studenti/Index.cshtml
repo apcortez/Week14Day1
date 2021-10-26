@@ -16,7 +16,10 @@
             <td>@item.ID</td>
             <td>@item.Nome</td>
             <td>@item.Cognome</td>
-            <td><a asp-controller="Studenti" asp-action="Details" asp-route-id="@item.ID" class="btn btn-success">Ulteriori info</a></td>
+            <td><a asp-controller="Studenti" asp-action="Details" asp-route-id="@item.ID" class="btn btn-success">Info</a>
+                <a asp-controller="Studenti" asp-action="Update" asp-route-id="@item.ID" class="btn btn-primary">Modifica</a>
+                <a asp-controller="Studenti" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
         }
     </tbody>

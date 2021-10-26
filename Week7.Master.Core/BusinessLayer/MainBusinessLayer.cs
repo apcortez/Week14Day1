@@ -110,6 +110,7 @@ namespace Week7.Master.Core.BusinessLayer
             //controllo input
             //controllo se id esiste
             var studente = studentiRepo.GetById(idStudenteDaModificare);
+            studente.Email = nuovaEmail;
             if (studente == null)
             {
                 return "Id Studente errato o inesistente";

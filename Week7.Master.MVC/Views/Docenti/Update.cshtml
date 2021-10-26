@@ -1,0 +1,33 @@
+﻿@model DocenteViewModel
+<h1>Modifica docente: </h1>
+
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="ID" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" readonly />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cognome"></label>
+        <input asp-for="Cognome" class="form-control" readonly />
+        <span asp-validation-for="Cognome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Telefono"></label>
+        <input asp-for="Telefono" class="form-control" />
+        <span asp-validation-for="Telefono" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Conferma modifica" class="btn btn-secondary" />
+    <a class="btn btn-secondary" asp-controller="Docenti" asp-action="Index" role="button">Indietro</a>
+</form>
